@@ -1,5 +1,3 @@
-Downloading n98-magerun2.phar, just a moment...
-n98-magerun2.phar: OK
 -- MariaDB dump 10.19  Distrib 10.5.15-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: db    Database: magento
