@@ -7,6 +7,7 @@ services:
       - ./src/app/code:/var/www/html/app/code:cached
       - ./src/app/design:/var/www/html/app/design:cached
       - ./src/app/etc:/var/www/html/app/etc:cached
+      - ./src/pub:/var/www/html/pub
       - ./src/composer.json:/var/www/html/composer.json:cached
       - ./src/composer.lock:/var/www/html/composer.lock:cached
       - ./src/grunt-config.json.sample:/var/www/html/grunt-config.json:cached
