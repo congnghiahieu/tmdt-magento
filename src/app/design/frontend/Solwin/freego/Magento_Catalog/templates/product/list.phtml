@@ -149,8 +149,8 @@ $outofstockImagewidth = $outofstock_helper->getConfigValue('outofstock_product/o
                         </a>
                         <?php if ($viewMode == 'grid') { ?>
                             <div class="product-item-inner">
-                                <div class="product actions product-item-actions"<?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
-                                    <div class="actions-primary"<?php echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>
+                                <div class="product actions product-item-actions"<?php echo ($pos && strpos($pos, $viewMode . '-actions')) ? $position : ''; ?>>
+                                    <div class="actions-primary"<?php echo ($pos && strpos($pos, $viewMode . '-primary')) ? $position : ''; ?>>
                                         <?php if ($_product->isSaleable()): ?>
                                             <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                             <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
@@ -171,7 +171,7 @@ $outofstockImagewidth = $outofstock_helper->getConfigValue('outofstock_product/o
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div data-role="add-to-links" class="actions-secondary"<?php echo strpos($pos, $viewMode . '-secondary') ? $position : ''; ?>>
+                                    <div data-role="add-to-links" class="actions-secondary"<?php echo ($pos && strpos($pos, $viewMode . '-secondary')) ? $position : ''; ?>>
                                         <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
                                             <a href="#"
                                                class="action towishlist"
