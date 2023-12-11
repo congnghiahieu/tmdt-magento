@@ -23,7 +23,7 @@ class News extends Template
     public function getPriceRate()
     {
         try {
-            $url = 'https://vnexpress.net/rss/tin-moi-nhat.rss';
+            $url = 'https://vnexpress.net/rss/kinh-doanh.rss';
             $this->curl->get($url);
             $xml_text = $this->curl->getBody();
 
