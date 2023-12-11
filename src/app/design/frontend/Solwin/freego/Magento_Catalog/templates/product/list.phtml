@@ -342,7 +342,7 @@ $outofstockImagewidth = $outofstock_helper->getConfigValue('outofstock_product/o
             <?php endforeach; ?>
         </ol>
     </div>
-    <?php echo $block->getToolbarHtml() ?>
+    <?php echo $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
     <?php if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
             {
