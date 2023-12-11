@@ -1,0 +1,41 @@
+<?php
+
+$rateData = $block->getPriceRate();
+$i = 1;
+
+?>
+<div class='container'>
+    <h2 style="font-weight: bold;">Tỷ giá tiền tệ</h2>
+    <h3 style="margin-bottom: 10px;align-self:center;">Tỷ giá hối đoái từ Vietcombank vào <?= $block->escapeHtml($rateData->DateTime) ?></h3>
+    <table class="rate-table">
+
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã</th>
+                <th>Quốc gia</th>
+                <th>Tên</th>
+                <th>Mua vào</th>
+                <th>Bán ra</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach ($rateData->Exrate as $key => $rate) : ?>
+                <tr>
+                    <td><?= $i ?></td>
+                    <td><?= $block->escapeHtml($rate->attributes()['CurrencyCode']) ?></td>
+                    <td><img src="https://wise.com/public-resources/assets/flags/rectangle/<?php echo strtolower($block->escapeHtml($rate->attributes()['CurrencyCode'])); ?>.png" style="width: 25;height:auto;"/></td>
+                    <td><?= $block->escapeHtml($rate->attributes()['CurrencyName']) ?></td>
+                    <td><?= $block->escapeHtml($rate->attributes()['Buy']) ?></td>
+                    <td><?= $block->escapeHtml($rate->attributes()['Transfer']) ?></td>
+                </tr>
+            <?php $i++;
+            endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+</script>
