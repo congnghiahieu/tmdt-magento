@@ -1,0 +1,33 @@
+<?php
+
+$newsData = $block->getPriceRate();
+$i = 1;
+
+?>
+
+<div class='container'>
+    <h2 style="font-weight: bold;">Tin tức mới cập nhật</h2>
+    <?php foreach ($newsData->channel->item as $key => $news) : ?>
+        <div class="item" onclick="window.open('<?= $block->escapeHtml($news->link) ?>', '_blank').focus()">
+            <div class="item-image">
+                <?= $news->image ?>
+            </div>
+            <div class="item-content">
+                <div class="item-title">
+                    <?= $block->escapeHtml($news->title) ?>
+                </div>
+                <div class="item-description">
+                    <?= $news->realDescription ?>
+                </div>
+                <div class="item-pubDate">
+                    <?= $block->escapeHtml($news->pubDate) ?>
+                </div>
+            </div>
+        </div>
+    <?php $i++;
+    endforeach; ?>
+</div>
+
+<script>
+
+</script>
