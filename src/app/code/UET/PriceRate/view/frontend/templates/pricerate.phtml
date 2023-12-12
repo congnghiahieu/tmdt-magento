@@ -8,27 +8,32 @@ $i = 1;
     <h2 style="font-weight: bold;">Tỷ giá tiền tệ</h2>
     <h3 style="margin-bottom: 10px;align-self:center;">Tỷ giá hối đoái từ Vietcombank vào <?= $block->escapeHtml($rateData->DateTime) ?></h3>
     <table class="rate-table">
-
         <thead>
-            <tr>
-                <th>STT</th>
-                <th>Mã</th>
-                <th>Quốc gia</th>
-                <th>Tên</th>
-                <th>Mua vào</th>
-                <th>Bán ra</th>
+            <tr bgcolor="#ed875f">
+                <th style="text-align: center;">Mã ngoại tệ</th>
+                <th style="text-align: center;">Tên ngoại tệ</th>
+                <th style="text-align: center;">Mua tiền mặt</th>
+                <th style="text-align: center;">Mua chuyển khoản</th>
+                <th style="text-align: center;">Bán</th>
             </tr>
         </thead>
 
         <tbody>
             <?php foreach ($rateData->Exrate as $key => $rate) : ?>
                 <tr>
-                    <td><?= $i ?></td>
-                    <td><?= $block->escapeHtml($rate->attributes()['CurrencyCode']) ?></td>
-                    <td><img src="https://wise.com/public-resources/assets/flags/rectangle/<?php echo strtolower($block->escapeHtml($rate->attributes()['CurrencyCode'])); ?>.png" style="width: 25;height:auto;"/></td>
-                    <td><?= $block->escapeHtml($rate->attributes()['CurrencyName']) ?></td>
-                    <td><?= $block->escapeHtml($rate->attributes()['Buy']) ?></td>
-                    <td><?= $block->escapeHtml($rate->attributes()['Transfer']) ?></td>
+                    <td style="padding-left: 48px;">
+                        <span>
+                            <picture style="vertical-align: middle;">
+                                <img style="border-radius: 10px; margin-right: 0.75rem;" src="https://wise.com/public-resources/assets/flags/rectangle/<?php echo strtolower($block->escapeHtml($rate->attributes()['CurrencyCode'])); ?>.png" style="width: 25;height:auto;"/>
+                            </picture>
+                            <?= $block->escapeHtml($rate->attributes()['CurrencyCode']) ?>
+                        </span>
+                    </td>
+                    <!-- <td><img src="https://wise.com/public-resources/assets/flags/rectangle/<?php echo strtolower($block->escapeHtml($rate->attributes()['CurrencyCode'])); ?>.png" style="width: 25;height:auto;"/></td> -->
+                    <td style="text-align: center;"><?= $block->escapeHtml($rate->attributes()['CurrencyName']) ?></td>
+                    <td style="text-align: center;"><?= $block->escapeHtml($rate->attributes()['Buy']) ?></td>
+                    <td style="text-align: center;"><?= $block->escapeHtml($rate->attributes()['Transfer']) ?></td>
+                    <td style="text-align: center;"><?= $block->escapeHtml($rate->attributes()['Sell']) ?></td>
                 </tr>
             <?php $i++;
             endforeach; ?>
