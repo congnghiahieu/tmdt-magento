@@ -7,16 +7,16 @@ class Topmenu implements ObserverInterface
 {
     public function execute(EventObserver $observer)
     {
-        $menu = $observer->getMenu();
-        $tree = $menu->getTree();
-        $data = [
-            'name'      => __('Tin tức'),
-            'id'        => 'news',
-            'url'       => '/news',
-            'is_active' => false
-        ];
-        $node = new Node($data, 'id', $tree, $menu);
-        $menu->addChild($node);
+        // $menu = $observer->getMenu();
+        // $tree = $menu->getTree();
+        // $data = [
+        //     'name'      => __('Tin tức'),
+        //     'id'        => 'news',
+        //     'url'       => '/news',
+        //     'is_active' => false
+        // ];
+        // $node = new Node($data, 'id', $tree, $menu);
+        // $menu->addChild($node);
         return $this;
     }
 }
