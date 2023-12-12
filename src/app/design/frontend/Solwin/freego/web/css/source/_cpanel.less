@@ -1696,6 +1696,25 @@ Breadcrumbs less
             }
         }
     }
+    .hb-center {
+        // float: left;
+        // width: 75%;
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 5px;
+        .hb-slider {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            > li {
+                display: block;
+                margin: 0;
+                > a {
+                    display: block;
+                }
+            }
+        }
+    }
     .hb-right {
         float: left;
         width: 25%;
@@ -1874,6 +1893,7 @@ Breadcrumbs less
         .hbr-inner {
             margin-bottom: 20px;
             padding: 0 10px;
+            vertical-align: middle;
         }
     }
 }
