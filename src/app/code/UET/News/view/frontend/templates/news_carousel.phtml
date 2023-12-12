@@ -1,0 +1,50 @@
+<?php
+
+$newsData = $block->getNews();
+$i = 1;
+
+?>
+
+<div class="hpb-main pad-main">
+    <div class="block-title-main">
+        <h2>Latest business news</h2>
+        <div class="title-border"></div>
+    </div>
+    <div style="margin: 0 -10px;">
+        <div class="hpb-main hpb-slider">
+        <?php foreach ($newsData->channel->item as $key => $news) : ?>
+            <div class="hpb-inner">
+                <div class="hpb-img">
+                    <a target="blank" href="<?= $block->escapeHtml($news->link) ?>">
+                        <img class="img-resp center-b" src="<?= $news->image ?>" alt="img-400-250" />
+                    </a>
+                </div>
+                <div class="hpb-content-main">
+                    <div class="hpb-content">
+                        <h2>
+                        <a target="blank" href="<?= $block->escapeHtml($news->link) ?>">
+                            <?= $block->escapeHtml($news->title) ?>
+                        </a>
+                        </h2>
+                        <p>
+                        <?= $news->realDescription ?>
+                        </p>
+                    </div>
+                    <div class="hpb-info">
+                        <span class="hpb-poster">
+                            <i class="fa fa-user"></i> <em>VNExpress.net</em>
+                        </span>
+                        <span class="hpb-poster">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> <em><?= $block->escapeHtml($news->pubDate) ?></em>
+                        </span>
+                        <span class="readmore">
+                            <a href="#">Read More</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        <?php $i++;
+        endforeach; ?>
+        </div>
+    </div>
+</div>
