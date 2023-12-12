@@ -20,7 +20,7 @@ class News extends Template
         return parent::_prepareLayout();
     }
 
-    public function getPriceRate()
+    public function getNews()
     {
         try {
             $url = 'https://vnexpress.net/rss/kinh-doanh.rss';
