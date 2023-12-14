@@ -20,9 +20,13 @@
     },
     "version": "2.4.6-p2",
     "require": {
+        "livechat/module-magento-livechat": "dev-master",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
         "magento/composer-root-update-plugin": "~2.0",
         "magento/product-community-edition": "2.4.6-p2",
+        "mageplaza/magento-2-social-login": "^4.1",
+        "mageplaza/magento-2-vietnamese-language-pack": "dev-master",
+        "mageplaza/module-smtp": "^4.7",
         "mailchimp/mc-magento2": "^103.4"
     },
     "autoload": {
