@@ -26,8 +26,7 @@
         "magento/product-community-edition": "2.4.6-p2",
         "mageplaza/magento-2-social-login": "^4.1",
         "mageplaza/magento-2-vietnamese-language-pack": "dev-master",
-        "mageplaza/module-smtp": "^4.7",
-        "mailchimp/mc-magento2": "^103.4"
+        "mageplaza/module-smtp": "^4.7"
     },
     "autoload": {
         "exclude-from-classmap": [
